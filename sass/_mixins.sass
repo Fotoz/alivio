@@ -1,0 +1,48 @@
+// Font-face:
+=font-face($font-family, $weight: 400, $style: normal)
+	@font-face
+		font:
+			family: $font-family
+			style: $style
+			weight: $weight
+		src: url('../fonts/' + $font-family + '.woff2') format('woff2')
+
+// Transition:
+=trs($property: all, $duration: .15s, $timing-function: linear)
+	transition: $property $duration $timing-function
+
+// Responsive value:
+=responsive-value($property, $start-size, $min-size)
+	$add-size: $start-size - $min-size
+	#{$property}: $start-size + px
+	@media (max-width: #{$container-mw + px})
+		#{$property}: calc(#{$min-size + px} + #{$add-size} * ((100vw - 320px) / #{$container-mw - 320}))
+
+// Responsive media queries:
+// max-width:
+=maxw-1199()
+	@media (max-width: 1199px)
+		@content
+=maxw-991()
+	@media (max-width: 991px)
+		@content
+=maxw-767()
+	@media (max-width: 767px)
+		@content
+=maxw-575()
+	@media (max-width: 575px)
+		@content
+
+// min-width:
+=minw-1200()
+	@media (max-width: 1200px)
+		@content
+=minw-992()
+	@media (max-width: 992px)
+		@content
+=minw-768()
+	@media (max-width: 768px)
+		@content
+=minw-576()
+	@media (max-width: 576px)
+		@content
