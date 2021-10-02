@@ -1,0 +1,111 @@
+// Header:
+.header
+	&__inner
+		display: flex
+		align-items: center
+	&__nav-link
+		font-family: 'LatoSemibold'
+		color: $black
+	&__trial
+		&-link
+			margin-right: 25px
+			color: $black
+
+// Media queries:
++minw-992()
+	.header
+		&__inner
+			height: 85px
+		&__logo
+			flex: 0 0 15%
+		&__nav
+			flex: 1 0 auto
+			padding: 0 15px
+			&-link
+				position: relative
+				&:not(:last-child)
+					margin-right: 30px
+				&::before,
+				&::after
+					content: ''
+					position: absolute
+					left: 0
+
+					width: 100%
+					height: 3px
+
+					background-color: $accent
+					transform: scaleX(0)
+					+trs(all, .25s)
+				&::before
+					top: -3px
+					transform-origin: right
+				&::after
+					bottom: -5px
+					transform-origin: left
+				&:hover::before,
+				&:hover::after
+					transform: scaleX(1)
+
+	._touch
+		.header
+			&__nav-link
+				&:hover::before,
+				&:hover::after
+					transform: scaleX(0)
+			&__nav-link,
+			&__trial-link
+				color: $black
+
++minw-1200()
+	.header
+		&__logo
+			flex: 0 0 17%
+		&__nav
+			&-link:not(:last-child)
+				margin-right: 70px
+
++maxw-991()
+	.header
+		position: relative
+		&__wrapper
+			display: none
+			width: 100%
+			height: 100vh
+
+			position: absolute
+			top: 0
+			left: 0
+			z-index: 100
+
+			padding: 17px 0
+
+			background-color: $primary
+		&__inner
+			flex-direction: column
+			justify-content: space-between
+
+			height: 100%
+
+			overflow-y: auto
+			-webkit-overflow-scrolling: touch
+		&__logo
+			font-size: 40px
+			color: $white
+		&__nav
+			padding: 50px 0
+			text-align: center
+			&-link
+				display: block
+				font-size: 25px
+				color: $white
+				&:hover
+					color: $white
+				&:not(:last-child)
+					margin-bottom: 30px
+		&__trial-link
+			color: $white
+			&:hover
+				color: $white
+		.hamburger
+			display: block

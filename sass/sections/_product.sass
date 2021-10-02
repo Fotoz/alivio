@@ -1,0 +1,64 @@
+// Product:
+.product
+	+responsive-value(padding-top, 120, 50)
+	+responsive-value(padding-bottom, 240, 50)
+	&__inner
+		display: flex
+	&__photo
+		position: relative
+	&__col
+		> *:last-child
+			margin-bottom: 0
+	&__title
+		margin-bottom: 25px
+	&__text
+		margin-bottom: 40px
+		max-width: 415px
+
+// Media queries:
++minw-576()
+	.product
+		&__image
+			border-radius: 18px
+
++minw-768()
+	.product
+		&__custom-card
+			position: absolute
+			bottom: -74px
+			right: -60px
+			z-index: 1
+
++minw-1200()
+	.product
+		&__inner
+			> *
+				flex: 0 0 50%
+		&__photo
+			padding:
+				left: 60px
+				right: 10px
+		&__custom-card
+			left: 0
+			box-shadow: -5px 5px 15px #d9d9d9
+		&__col
+			padding-left: 60px
+
++maxw-1199()
+	.product
+		&__inner
+			flex-direction: column-reverse
+			max-width: 600px
+		&__col
+			margin-bottom: 50px
+
++maxw-767()
+	.product
+		&__custom-card
+			position: relative
+			margin: -100px auto 0
+
++maxw-575()
+	.product
+		&__photo
+			margin: 0 -10px

@@ -1,0 +1,40 @@
+// Footer:
+.footer
+	+responsive-value(padding-top, 90, 50)
+	+responsive-value(padding-bottom, 95, 50)
+
+	background-color: $primary
+	&__site-logo
+		display: table
+
+		color: $white
+		&:not(:last-child)
+			margin-bottom: 55px
+	&__nav
+		&-link
+			display: table
+
+			font-size: 25px
+			font-family: 'LatoSemibold'
+			color: $white
+			&:not(:last-child)
+				margin-bottom: 55px
+	&__site-logo:hover,
+	&__nav-link:hover
+		color: $white
+
+._no-touch
+	.footer
+		&__site-logo:hover,
+		&__nav-link:hover
+			text-decoration: underline
+
+// Media queries:
++maxw-575()
+	.footer
+		&__site-logo:not(:last-child)
+			margin-bottom: 40px
+		&__nav-link
+			font-size: 20px
+			&:not(:last-child)
+				margin-bottom: 40px

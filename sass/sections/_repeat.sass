@@ -1,0 +1,202 @@
+// Repeating elements:
+
+// Hamburger:
+.hamburger
+	display: none
+	position: absolute
+	top: 25px
+	right: 10px
+	z-index: 100
+
+// Site logo:
+.site-logo
+	font-size: 28px
+	font-family: 'AvenirLTBlack'
+	line-height: 1
+	color: $accent
+	&--size--b
+		font-size: 40px
+
+// Button:
+.button
+	display: inline-block
+	padding: .85em 2.5em
+
+	font-size: 20px
+	color: $white !important
+	cursor: pointer
+
+	background-color: $accent
+	border-radius: 4px
+	+trs(background-color)
+	&--size--s
+		padding: .525em 2.5em
+
++maxw-575()
+	.button--table
+		display: table
+		margin: 0 auto
+
+._no-touch
+	.button:hover
+		background-color: darken($accent, 5)
+
+// Main title:
+.main-title
+	+responsive-value(font-size, 65, 44)
+	font-family: 'GeorgiaBold'
+	line-height: calc(74 / 65 * 100%)
+	color: $accent
+	margin-bottom: 0
+
+// Title:
+.title
+	+responsive-value(font-size, 50, 25)
+	font-family: 'GeorgiaBold'
+	line-height: 157%
+	color: $accent
+	margin-bottom: 0
+
+// Sup text:
+.sup-text
+	+responsive-value(font-size, 24, 18)
+	font-family: 'LatoSemibold'
+	line-height: calc(38 / 24 * 100%)
+
+// Step:
+.step
+	flex: 0 1 420px
+	> *:not(:last-child)
+		+responsive-value(margin-bottom, 55, 30)
+	&__title
+		position: relative
+
+		+responsive-value(font-size, 30, 24)
+		font-family: 'GeorgiaBold'
+		text-align: center
+		line-height: 1
+		color: $black
+		span
+			position: absolute
+			top: 0
+			left: 20px
+			transform: translateY(-67%)
+
+			+responsive-value(font-size, 150, 100)
+			font-family: 'Georgia'
+			line-height: 1
+			color: rgba($accent, .2)
+	&__text
+		font-family: 'LatoMedium'
+	&__image
+		border-radius: 12px
+		overflow: hidden
+
+// Embed:
+.embed
+	position: relative
+	overflow: hidden
+	border-radius: 16px
+	&::before
+		content: ''
+		display: block
+		padding-top: 56.25% // % padding равен соотношению сторон 16:9
+	iframe,
+	video,
+	object,
+	embed,
+	&__poster
+		position: absolute
+		top: 0
+		left: 0
+		z-index: 10
+
+		width: 100%
+		height: 100%
+	&__poster
+		display: flex
+		justify-content: center
+		align-items: center
+
+		cursor: pointer
+		background: url(../img/story/poster.jpg) center / cover no-repeat
+		&::after
+			content: ''
+			position: absolute
+			top: 0
+			left: 0
+			z-index: -10
+
+			width: 100%
+			height: 100%
+
+			background-color: rgba($black, .4)
+			+trs(background-color)
+	&__button
+		width: 80px
+		height: 80px
+		padding: 0
+
+		border: 3px solid $white
+		border-radius: 50%
+		background-color: transparent
+		+trs(border-color)
+		svg
+			width: 28px
+			height: 35px
+			margin-left: 5px
+			fill: $white
+			+trs(fill)
+
+._no-touch
+	.embed__poster
+		&:hover::after
+			background-color: rgba($black, .2)
+		&:hover
+			.embed__button
+				border-color: $accent
+			svg
+				fill: $accent
+
+// Custom card:
+.custom-card
+	max-width: 300px
+	padding: 30px 55px
+
+	text-align: center
+	color: $black
+
+	background-color: $white
+	border-radius: 4px
+	box-shadow: 5px 5px 15px #d9d9d9
+	&__header
+		display: table
+		margin: 0 auto 14px
+		padding: 0 8px 6px
+
+		font-size: 14px
+		font-weight: 600
+		border-bottom: 1px solid $black
+	&__photo
+		width: 58px
+		height: 58px
+		margin: 0 auto 10px
+	&__image
+		border-radius: 50%
+	&__name
+		margin-bottom: 20px
+		font-size: 12px
+	&__title
+		margin-bottom: 15px
+		font-size: 16px
+		font-family: 'GeorgiaBold'
+	&__list
+		text-align: left
+	&__list-item
+		font-size: 12px
+		font-family: 'LatoMedium'
+		text-transform: capitalize
+		list-style: disc
+		list-style-position: inside
+		&:not(:last-child)
+			margin-bottom: 15px

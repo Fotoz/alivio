@@ -1,0 +1,68 @@
+// Story:
+.story
+	padding-top: 220px
+	padding-bottom: 170px
+	background-color: $primary
+	&__container
+		max-width: 1540px
+	&__inner
+		max-width: 600px
+	&__col
+		> *:last-child
+			margin-bottom: 0
+	&__title
+		margin-bottom: 30px
+		color: $white
+		line-height: 157%
+	&__text
+		margin-bottom: 55px
+		+responsive-value(font-size, 25, 17)
+		font-family: 'LatoSemibold'
+		color: $white
+		line-height: 157%
+
+// Media queries:
++minw-1200()
+	.story
+		&__inner
+			display: flex
+			align-items: center
+			max-width: initial
+		&__col
+			flex-basis: 49%
+			padding-right: 15px
+		&__video
+			flex-basis: 51%
+
+@media (min-width: 1400px)
+		.story
+			&__col
+				flex-basis: 41%
+			&__video
+				flex-basis: 59%
+
+@media (max-width: 1540px)
+	.story
+		padding-top: calc(50px + 170 * ((100vw - 320px) / 1220))
+		padding-bottom: calc(50px + 120 * ((100vw - 320px) / 1220))
+
++maxw-1199()
+	.story
+		&__col
+			margin-bottom: 50px
+		&__title
+			margin-bottom: 25px
+		&__text
+			margin-bottom: 40px
+
++maxw-991()
+	.story
+		&__title
+			max-width: 450px
+
++maxw-575()
+	.story
+		&__video
+			margin: 0 -10px
+			.embed
+				border-radius: 0

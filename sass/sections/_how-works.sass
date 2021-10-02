@@ -1,0 +1,64 @@
+// How it works:
+.how-works
+	padding: 100px 0
+	&__header
+		margin-bottom: 200px
+		+responsive-value(margin-bottom, 200, 100)
+	&__text
+		margin-bottom: 0
+	&__step
+		&:last-child
+			align-self: center
+		&:nth-child(2)
+			align-self: end
+
+// Media queries:
++minw-992()
+	.how-works
+		&__inner
+			display: flex
+			justify-content: space-between
+			height: 1000px
+			margin: 0 -15px
+		&__step
+			padding: 0 15px
+			&:last-child
+				align-self: center
+			&:nth-child(2)
+				align-self: end
+
++minw-1200()
+	.how-works
+		&__header
+			display: flex
+			justify-content: space-between
+			align-items: center
+			> *
+				flex: 0 0 45%
+
+@media (max-width: 1400px)
+	.how-works
+		padding: calc(50px + 50 * ((100vw - 320px) / 1080)) 0
+
++maxw-1199()
+	.how-works
+		&__title
+			max-width: 520px
+			margin-bottom: 25px
+		&__text
+			max-width: 600px
+
++maxw-991()
+	.how-works
+		&__step
+			margin: 0 auto
+			max-width: 390px
+			&:not(:last-child)
+				margin-bottom: 100px
+			span
+				left: 50px
+
++maxw-767()
+	.how-works
+		&__title
+			max-width: 410px

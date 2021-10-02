@@ -2,6 +2,9 @@
 body
 	min-width: 320px
 	font: $body-font
+@media (max-width: 1400px)
+	body
+		font-size: calc(16px + 4 * ((100vw - 320px) / 1080))
 
 ul
 	margin-bottom: 0
@@ -23,6 +26,9 @@ button,
 textarea
 	&:focus
 		outline: none
+
+a
+	+trs(color)
 
 ::placeholder
 	color: #777
