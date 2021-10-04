@@ -59,6 +59,9 @@ $(function () {
 		if (width > 991) {
 			$('body').removeClass('_of-hidden');
 		}
+		if (width < 992 && $('.hamburger').hasClass('is-active')) {
+			$('body').addClass('_of-hidden');
+		}
 	});
 
 });
