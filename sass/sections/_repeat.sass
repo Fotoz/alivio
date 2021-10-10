@@ -148,15 +148,15 @@
 		background-color: transparent
 		+trs(border-color)
 		svg
-			position: relative
-			z-index: 100
-
-			width: 28px
+			width: 30px
 			height: 35px
+			margin-top: 4px
 			margin-left: 5px
 
-			fill: $white
-			+trs(fill)
+			fill: none
+			stroke: $white
+			stroke-width: 3px
+			+trs(stroke)
 
 ._no-touch
 	.embed__poster
@@ -166,7 +166,7 @@
 			.embed__button
 				border-color: $accent
 			svg
-				fill: $accent
+				stroke: $accent
 
 // Custom card:
 .custom-card
