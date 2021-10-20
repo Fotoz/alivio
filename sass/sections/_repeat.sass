@@ -146,17 +146,21 @@
 		border: 3px solid $white
 		border-radius: 50%
 		background-color: transparent
-		+trs(border-color)
-		svg
-			width: 30px
-			height: 35px
-			margin-top: 4px
-			margin-left: 5px
+		+trs(all)
+		&::after
+			content: ''
+			display: inline-block
+			vertical-align: middle
 
-			fill: none
-			stroke: $white
-			stroke-width: 3px
-			+trs(stroke)
+			width: 30px
+			height: 34px
+			margin-left: 7px
+
+			border-style: solid
+			border-width: 17px 0 17px 30px
+			border-color: transparent transparent transparent $white
+			border-radius: 5px
+			+trs(border-color)
 
 ._no-touch
 	.embed__poster
@@ -165,8 +169,9 @@
 		&:hover
 			.embed__button
 				border-color: $accent
-			svg
-				stroke: $accent
+				transform: scale(1.2)
+				&::after
+					border-color: transparent transparent transparent $accent
 
 // Custom card:
 .custom-card
