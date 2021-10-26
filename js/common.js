@@ -31,8 +31,7 @@ $(function () {
 	$('.hamburger').on('click', function (event) {
 		event.preventDefault();
 
-		$('.hamburger, .header, .be-aware').toggleClass('is-active');
-		$('.header__nav').fadeToggle();
+		$('.hamburger, .header__nav').toggleClass('is-active');
 		$('body').toggleClass('_of-hidden');
 	});
 
@@ -41,8 +40,7 @@ $(function () {
 		event.preventDefault();
 
 		if ( $(document).width() < 992 ) {
-			$('.hamburger, .header, .be-aware').removeClass('is-active');
-			$('.header__nav').fadeToggle();
+			$('.hamburger, .header__nav').removeClass('is-active');
 			$('body').removeClass('_of-hidden');
 		}
 	});
@@ -62,12 +60,23 @@ $(function () {
 		var width = $(document).width();
 
 		if (width > 991) {
-			$('.be-aware').removeClass('is-active');
 			$('body').removeClass('_of-hidden');
+			$('.hamburger, .header__nav').removeClass('is-active');
 		}
-		if (width < 992 && $('.hamburger').hasClass('is-active')) {
-			$('body').addClass('_of-hidden');
-			$('.be-aware').addClass('is-active');
+	});
+
+	//===== Smooth scroll:
+	$('a[href^="#"]:not([href="#"])').on('click', function(event) {
+		event.preventDefault();
+
+		if ( $(document).width() > 991 ) {
+			$('html,body').animate({
+				scrollTop: $($(this).attr('href')).offset().top
+			}, 350);
+		} else {
+			$('html,body').animate({
+				scrollTop: $($(this).attr('href')).offset().top - 60
+			}, 350);
 		}
 	});
 

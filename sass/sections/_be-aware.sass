@@ -3,8 +3,6 @@
 	+responsive-value(padding-top, 175, 75)
 	+responsive-value(padding-bottom, 355, 75)
 	background: url('../img/be-aware/be-aware.jpg') center / cover no-repeat
-	&.is-active
-		margin-top: 60px
 	&__body
 		position: relative
 		z-index: 10
@@ -19,6 +17,9 @@
 		color: $secondary
 
 // Media queries:
++maxw-991()
+	.be-aware
+		margin-top: 60px
 +maxw-767()
 	.be-aware
 		&__inner
