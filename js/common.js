@@ -31,36 +31,43 @@ $(function () {
 	$('.hamburger').on('click', function (event) {
 		event.preventDefault();
 
-		$(this).toggleClass('is-active');
-		$('.header__wrapper').fadeToggle();
+		$('.hamburger, .header, .be-aware').toggleClass('is-active');
+		$('.header__nav-wrapper').fadeToggle();
 		$('body').toggleClass('_of-hidden');
 	});
+
 	// Hide the menu and return the standard view of the hamburger:
-	$('.header__wrapper a').on('click', function (event) {
+	$('.header__nav-wrapper a').on('click', function (event) {
 		event.preventDefault();
 
-		$('.hamburger').removeClass('is-active');
-		$('.header__wrapper').fadeToggle();
-		$('body').removeClass('_of-hidden');
+		if ( $(document).width() < 992 ) {
+			$('.hamburger, .header, .be-aware').removeClass('is-active');
+			$('.header__nav-wrapper').fadeToggle();
+			$('body').removeClass('_of-hidden');
+		}
 	});
+
 	// Resetting scroll for menu:
-	$('.hamburger, .header__wrapper a').on('click', function (event) {
+	$('.hamburger, .header__nav-wrapper a').on('click', function (event) {
 		event.preventDefault();
 
-		$('.header__inner').delay(350).queue(function (reset_scroll) {
+		$('.header__nav-inner').delay(350).queue(function (reset_scroll) {
 			$(this).scrollTop(0);
 			reset_scroll();
 		});
 	});
+
 	// Removing classes for menu if window resize:
 	$(window).on('resize', function () {
 		var width = $(document).width();
 
 		if (width > 991) {
+			$('.be-aware').removeClass('is-active');
 			$('body').removeClass('_of-hidden');
 		}
 		if (width < 992 && $('.hamburger').hasClass('is-active')) {
 			$('body').addClass('_of-hidden');
+			$('.be-aware').addClass('is-active');
 		}
 	});
 
