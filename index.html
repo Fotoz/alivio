@@ -13,7 +13,7 @@
 	<link rel="stylesheet" href="css/styles.min.css">
 
 	<!-- Live Server does not work with Prefixfree -->
-	<script src="libs/prefixfree/prefixfree.min.js"></script>
+	<!-- <script src="libs/prefixfree/prefixfree.min.js"></script> -->
 </head>
 
 <body>
@@ -26,25 +26,19 @@
 
 				<div class="header__logo site-logo">Alivio</div>
 
-				<div class="header__nav-wrapper">
-					<div class="header__nav-inner">
+        <nav class="header__nav">
+          <ul class="header__nav-list">
+            <li class="header__nav-item"><a class="header__nav-link" href="#">Why Alivio</a></li>
+            <li class="header__nav-item"><a class="header__nav-link" href="#">Solutions</a></li>
+            <li class="header__nav-item"><a class="header__nav-link" href="#">Community</a></li>
+            <li class="header__nav-item"><a class="header__nav-link" href="#">Pricing</a></li>
+          </ul>
 
-						<nav class="header__nav">
-							<ul class="header__nav-list">
-								<li class="header__nav-item"><a class="header__nav-link" href="#">Why Alivio</a></li>
-								<li class="header__nav-item"><a class="header__nav-link" href="#">Solutions</a></li>
-								<li class="header__nav-item"><a class="header__nav-link" href="#">Community</a></li>
-								<li class="header__nav-item"><a class="header__nav-link" href="#">Pricing</a></li>
-							</ul>
-						</nav>
-
-						<div class="header__trial header__trial--nav">
-							<a class="header__trial-link" href="#">Sign in</a>
-							<a class="button button--size--s" href="#">Start Trial</a>
-						</div>
-
-					</div>
-				</div>
+          <div class="header__trial header__trial--nav">
+            <a class="header__trial-link" href="#">Sign in</a>
+            <a class="button button--size--s" href="#">Start Trial</a>
+          </div>
+        </nav>
 
 				<div class="header__trial">
 					<a class="header__trial-link" href="#">Sign in</a>
@@ -189,7 +183,7 @@
 
 	<!-- Local JS -->
 	<script src="libs/jquery/jquery.min.js"></script>
-	<script src="js/common.min.js"></script>
+	<script src="js/common.js"></script>
 </body>
 
 </html>

@@ -32,26 +32,26 @@ $(function () {
 		event.preventDefault();
 
 		$('.hamburger, .header, .be-aware').toggleClass('is-active');
-		$('.header__nav-wrapper').fadeToggle();
+		$('.header__nav').fadeToggle();
 		$('body').toggleClass('_of-hidden');
 	});
 
 	// Hide the menu and return the standard view of the hamburger:
-	$('.header__nav-wrapper a').on('click', function (event) {
+	$('.header__nav a').on('click', function (event) {
 		event.preventDefault();
 
 		if ( $(document).width() < 992 ) {
 			$('.hamburger, .header, .be-aware').removeClass('is-active');
-			$('.header__nav-wrapper').fadeToggle();
+			$('.header__nav').fadeToggle();
 			$('body').removeClass('_of-hidden');
 		}
 	});
 
 	// Resetting scroll for menu:
-	$('.hamburger, .header__nav-wrapper a').on('click', function (event) {
+	$('.hamburger, .header__nav a').on('click', function (event) {
 		event.preventDefault();
 
-		$('.header__nav-inner').delay(350).queue(function (reset_scroll) {
+		$('.header__nav').delay(350).queue(function (reset_scroll) {
 			$(this).scrollTop(0);
 			reset_scroll();
 		});
