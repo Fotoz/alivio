@@ -36,7 +36,7 @@ $(function () {
 	});
 
 	// Hide the menu and return the standard view of the hamburger:
-	$('.header__nav a').on('click', function (event) {
+	$('.header a').on('click', function (event) {
 		event.preventDefault();
 
 		if ( $(document).width() < 992 ) {
@@ -46,7 +46,7 @@ $(function () {
 	});
 
 	// Resetting scroll for menu:
-	$('.hamburger, .header__nav a').on('click', function (event) {
+	$('.hamburger, .header a').on('click', function (event) {
 		event.preventDefault();
 
 		$('.header__nav').delay(350).queue(function (reset_scroll) {
